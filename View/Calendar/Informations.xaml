@@ -1,0 +1,62 @@
+﻿<Page x:Class="WPFKCK.View.Calendar.Informations"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFKCK.View.Calendar"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Informations">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.7*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="User: " HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="0"/>
+                <Label Content="Goal: " HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="1"/>
+                <Label Content="Actual Score: " HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="2"/>
+                <Label Content="Swim divider: " HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="3"/>
+                <Label Content="Bike divider: " HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="4"/>
+                <Label Content="Number of activities: " HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="5"/>
+                <Label Content="Last activity: " HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="6"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Name="UserLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="0"/>
+                <Label Name="GoalLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="1"/>
+                <Label Name="ScoreLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="2"/>
+                <Label Name="SwimLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="3"/>
+                <Label Name="BikeLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="4"/>
+                <Label Name="NumberLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="5"/>
+                <Label Name="LastLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Grid.Row="6"/>
+            </Grid>
+        </Grid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Back" Margin="10" Padding="5" Name="BackButton" Click="BackButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

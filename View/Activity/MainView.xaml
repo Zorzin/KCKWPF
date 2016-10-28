@@ -1,0 +1,99 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFKCK.View.Activity"
+      xmlns:system="clr-namespace:System;assembly=mscorlib"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      xmlns:Themes="clr-namespace:Xceed.Wpf.Toolkit.Themes;assembly=Xceed.Wpf.Toolkit" x:Class="WPFKCK.View.Activity.MainView"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="MainView">
+
+    <Page.Resources>
+        <ControlTemplate x:Key="newDecimalUpDownTemplate" 
+                     TargetType="{x:Type Control}">
+            <xctk:ButtonSpinner x:Name="Spinner" 
+                                  AllowSpin="{Binding AllowSpin, RelativeSource={RelativeSource TemplatedParent}}" 
+                                  BorderThickness="{TemplateBinding BorderThickness}" 
+                                  Background="{TemplateBinding Background}" 
+                                  IsTabStop="False" 
+                                  ShowButtonSpinner="{Binding ShowButtonSpinner, RelativeSource={RelativeSource TemplatedParent}}">
+                <xctk:WatermarkTextBox x:Name="TextBox" 
+                                         AcceptsReturn="False" 
+                                         BorderThickness="0" 
+                                         Background="{TemplateBinding Background}" 
+                                         ContextMenu="{TemplateBinding ContextMenu}" 
+                                         Foreground="{TemplateBinding Foreground}" 
+                                         FontWeight="{TemplateBinding FontWeight}" 
+                                         FontStyle="{TemplateBinding FontStyle}" 
+                                         FontStretch="{TemplateBinding FontStretch}" 
+                                         FontSize="{TemplateBinding FontSize}" 
+                                         FontFamily="{TemplateBinding FontFamily}" 
+                                         HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                         MinWidth="20" 
+                                         SelectAllOnGotFocus="{Binding SelectAllOnGotFocus, RelativeSource={RelativeSource TemplatedParent}}" 
+                                         TextAlignment="{Binding TextAlignment, RelativeSource={RelativeSource TemplatedParent}}" 
+                                         TextWrapping="NoWrap" 
+                                         Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}" 
+                                         TabIndex="{TemplateBinding TabIndex}" 
+                                         VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                         WatermarkTemplate="{Binding WatermarkTemplate, RelativeSource={RelativeSource TemplatedParent}}" 
+                                         Watermark="{Binding Watermark, RelativeSource={RelativeSource TemplatedParent}}">
+                    <xctk:WatermarkTextBox.IsReadOnly>
+                        <Binding Path="IsEditable" RelativeSource="{RelativeSource TemplatedParent}">
+                            <Binding.Converter>
+                                <xctk:InverseBoolConverter/>
+                            </Binding.Converter>
+                        </Binding>
+                    </xctk:WatermarkTextBox.IsReadOnly>
+                </xctk:WatermarkTextBox>
+            </xctk:ButtonSpinner>
+        </ControlTemplate>
+    </Page.Resources>
+
+    <Grid DataContext="{Binding SelectedItem, ElementName=ActivityListBox, Mode=TwoWay}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="ActivityListBox"/>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Type:" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Label Content="Distance:" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Label Content="Date:" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Label Content="Note:" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <ComboBox SelectedValue="{Binding type, Mode=OneWay}"  x:Name="TypeComboBox" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding distance, Mode=OneWay}" x:Name="DistanceTextBox" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" PreviewTextInput="DistanceTextBox_OnPreviewTextInput" />
+            <DatePicker SelectedDate="{Binding date, Mode=OneWay}" x:Name="DatePicker" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" DisplayDateEnd="{x:Static system:DateTime.Today}"/>
+            <TextBox Text="{Binding note, Mode=OneWay}" x:Name="NoteTextBox" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" />
+        </Grid>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button x:Name="BackButton" Content="Back" Padding="5" Margin="10" Click="BackButton_Click"/>
+            <Button x:Name="DeleteButton" Content="Delete" Padding="5" Margin="10" Click="DeleteButton_Click"/>
+            <Button x:Name="EditButton" Content="Save" Padding="5" Margin="10" Click="EditButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
+
+
+
+
+
+
+
