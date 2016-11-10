@@ -21,8 +21,8 @@
                 VerticalAlignment="Center" 
                 Content="Login"
                 Click="LoginButton_OnClick"
-                Margin="10"
-                Padding="10"/>
+                Margin="118,10"
+                Padding="10" Width="64"/>
             <Button 
                 Name="RegisterButton"
                 HorizontalAlignment="Center" 
@@ -37,8 +37,8 @@
                 VerticalAlignment="Center" 
                 Content="Exit"
                 Click="ExitButton_OnClick"
-                Margin="10"
-                Padding="10"/>
-         </StackPanel>
+                Margin="118,10"
+                Padding="10" Width="64"/>
+        </StackPanel>
     </Grid>
 </Page>

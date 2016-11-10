@@ -39,15 +39,15 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Name="AddButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Add" Padding="10" Grid.Row="0" Click="AddButton_Click"/>
+            <Button Name="AddButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Add" Padding="10" Grid.Row="0" Click="AddButton_Click" Margin="22,6" Width="106"/>
             <Button Name="SearchButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Search activities" Padding="10" Grid.Row="1" Click="SearchButton_Click"/>
-            <Button Name="ShowButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Show activities" Padding="10" Grid.Row="2" Click="ShowButton_Click"/>
-            <Button Name="LogoutButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Logout" Padding="10" Grid.Row="3" Click="LogoutButton_Click"/>
-            <Button Name="GoalButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Change Goal" Padding="10" Grid.Row="0" Grid.Column="1" Click="GoalButton_Click"/>
-            <Button Name="DividersButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Change Dividers" Padding="10" Grid.Row="1" Grid.Column="1" Click="DividersButton_Click"/>
+            <Button Name="ShowButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Show activities" Padding="10" Grid.Row="2" Click="ShowButton_Click" Margin="22,6,22,5" Width="106"/>
+            <Button Name="LogoutButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Logout" Padding="10" Grid.Row="3" Click="LogoutButton_Click" Margin="22,6" Width="106"/>
+            <Button Name="GoalButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Change Goal" Padding="10" Grid.Row="0" Grid.Column="1" Click="GoalButton_Click" Margin="18,6" Width="114"/>
+            <Button Name="DividersButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Change Dividers" Padding="10" Grid.Row="1" Grid.Column="1" Click="DividersButton_Click" Margin="18,6" Width="114"/>
             <Button Name="PasswordButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Change Password" Padding="10" Grid.Row="2" Grid.Column="1" Click="PasswordButton_Click"/>
-            <Button Name="InfoButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Informations" Padding="10" Grid.Row="3" Grid.Column="1" Click="InfoButton_Click"/>
-            <Button Name="ExitButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Exit" Padding="10" Grid.Row="4" Grid.ColumnSpan="2" Click="ExitButton_Click"/>
+            <Button Name="InfoButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Informations" Padding="10" Grid.Row="3" Grid.Column="1" Click="InfoButton_Click" Margin="18,6" Width="114"/>
+            <Button Name="ExitButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Exit" Padding="10" Grid.Row="4" Grid.ColumnSpan="2" Click="ExitButton_Click" Margin="105,5,106,6" Width="89"/>
         </Grid>
     </Grid>
 </Page>
