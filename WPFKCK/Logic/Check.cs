@@ -14,12 +14,15 @@ namespace WPFKCK.Logic
 
         public static bool CheckPassword(User user, string password, string repassword)
         {
-            if (password == repassword)
+            if (password.Length >= 6)
             {
-                var result = db.users.FirstOrDefault(x => x.idusers == user.idusers);
-                result.password = password;
-                db.SaveChanges();
-                return true;
+                if (password == repassword)
+                {
+                    var result = db.users.FirstOrDefault(x => x.idusers == user.idusers);
+                    result.password = password;
+                    db.SaveChanges();
+                    return true;
+                }
             }
             return false;
         }
@@ -29,11 +32,14 @@ namespace WPFKCK.Logic
             float divider;
             if (float.TryParse(s_divider, out divider))
             {
-                var result = db.users.FirstOrDefault(x => x.idusers == user.idusers);
-                result.bikedivider = divider;
-                user.bikedivider = divider;
-                db.SaveChanges();
-                return true;
+                if (divider > 0)
+                {
+                    var result = db.users.FirstOrDefault(x => x.idusers == user.idusers);
+                    result.bikedivider = divider;
+                    user.bikedivider = divider;
+                    db.SaveChanges();
+                    return true;
+                }
             }
             return false;
         }
@@ -43,11 +49,14 @@ namespace WPFKCK.Logic
             float divider;
             if (float.TryParse(s_divider, out divider))
             {
-                var result = db.users.FirstOrDefault(x => x.idusers == user.idusers);
-                result.swimdivider = divider;
-                user.swimdivider = divider;
-                db.SaveChanges();
-                return true;
+                if (divider > 0)
+                {
+                    var result = db.users.FirstOrDefault(x => x.idusers == user.idusers);
+                    result.swimdivider = divider;
+                    user.swimdivider = divider;
+                    db.SaveChanges();
+                    return true;
+                }
             }
             return false;
         }
@@ -57,11 +66,14 @@ namespace WPFKCK.Logic
             float goal;
             if (float.TryParse(s_goal, out goal))
             {
-                var result = db.users.FirstOrDefault(x => x.idusers == user.idusers);
-                result.goal = goal;
-                user.goal = goal;
-                db.SaveChanges();
-                return true;
+                if (goal > 0)
+                {
+                    var result = db.users.FirstOrDefault(x => x.idusers == user.idusers);
+                    result.goal = goal;
+                    user.goal = goal;
+                    db.SaveChanges();
+                    return true;
+                }
             }
             return false;
         }
